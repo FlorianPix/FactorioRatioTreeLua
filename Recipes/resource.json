@@ -1,0 +1,209 @@
+{
+  "crude-oil" : {
+    "name" : "crude-oil",
+    "localised_name" : [
+      "entity-name.crude-oil"
+    ],
+    "resource_category" : "basic-fluid",
+    "mineable_properties" : {
+      "minable" : true,
+      "mining_time" : 1,
+      "products" : [
+        {
+          "type" : "fluid",
+          "name" : "liquid-multi-phase-oil",
+          "probability" : 1,
+          "amount" : 10
+        }
+      ]
+    },
+    "pollution" : 0
+  },
+  "coal" : {
+    "name" : "coal",
+    "localised_name" : [
+      "entity-name.coal"
+    ],
+    "resource_category" : "basic-solid",
+    "mineable_properties" : {
+      "minable" : true,
+      "mining_time" : 1,
+      "mining_particle" : "coal-particle",
+      "products" : [
+        {
+          "type" : "item",
+          "name" : "coal",
+          "probability" : 1,
+          "amount" : 1
+        }
+      ]
+    },
+    "pollution" : 0
+  },
+  "angels-ore1" : {
+    "name" : "angels-ore1",
+    "localised_name" : [
+      "entity-name.angels-ore1"
+    ],
+    "resource_category" : "basic-solid",
+    "mineable_properties" : {
+      "minable" : true,
+      "mining_time" : 1,
+      "mining_particle" : "angels-ore1-particle",
+      "products" : [
+        {
+          "type" : "item",
+          "name" : "angels-ore1",
+          "probability" : 1,
+          "amount" : 1
+        }
+      ]
+    },
+    "pollution" : 0
+  },
+  "angels-ore2" : {
+    "name" : "angels-ore2",
+    "localised_name" : [
+      "entity-name.angels-ore2"
+    ],
+    "resource_category" : "basic-solid",
+    "mineable_properties" : {
+      "minable" : true,
+      "mining_time" : 2,
+      "mining_particle" : "angels-ore2-particle",
+      "products" : [
+        {
+          "type" : "item",
+          "name" : "angels-ore2",
+          "probability" : 1,
+          "amount" : 1
+        }
+      ]
+    },
+    "pollution" : 0
+  },
+  "angels-ore3" : {
+    "name" : "angels-ore3",
+    "localised_name" : [
+      "entity-name.angels-ore3"
+    ],
+    "resource_category" : "basic-solid",
+    "mineable_properties" : {
+      "minable" : true,
+      "mining_time" : 1.5,
+      "mining_particle" : "angels-ore3-particle",
+      "products" : [
+        {
+          "type" : "item",
+          "name" : "angels-ore3",
+          "probability" : 1,
+          "amount" : 1
+        }
+      ]
+    },
+    "pollution" : 0
+  },
+  "angels-ore4" : {
+    "name" : "angels-ore4",
+    "localised_name" : [
+      "entity-name.angels-ore4"
+    ],
+    "resource_category" : "basic-solid",
+    "mineable_properties" : {
+      "minable" : true,
+      "mining_time" : 2.5,
+      "mining_particle" : "angels-ore4-particle",
+      "products" : [
+        {
+          "type" : "item",
+          "name" : "angels-ore4",
+          "probability" : 1,
+          "amount" : 1
+        }
+      ]
+    },
+    "pollution" : 0
+  },
+  "angels-ore5" : {
+    "name" : "angels-ore5",
+    "localised_name" : [
+      "entity-name.angels-ore5"
+    ],
+    "resource_category" : "basic-solid",
+    "mineable_properties" : {
+      "minable" : true,
+      "mining_time" : 2,
+      "mining_particle" : "angels-ore5-particle",
+      "products" : [
+        {
+          "type" : "item",
+          "name" : "angels-ore5",
+          "probability" : 1,
+          "amount" : 1
+        }
+      ]
+    },
+    "pollution" : 0
+  },
+  "angels-ore6" : {
+    "name" : "angels-ore6",
+    "localised_name" : [
+      "entity-name.angels-ore6"
+    ],
+    "resource_category" : "basic-solid",
+    "mineable_properties" : {
+      "minable" : true,
+      "mining_time" : 2.5,
+      "mining_particle" : "angels-ore6-particle",
+      "products" : [
+        {
+          "type" : "item",
+          "name" : "angels-ore6",
+          "probability" : 1,
+          "amount" : 1
+        }
+      ]
+    },
+    "pollution" : 0
+  },
+  "angels-fissure" : {
+    "name" : "angels-fissure",
+    "localised_name" : [
+      "entity-name.angels-fissure"
+    ],
+    "resource_category" : "angels-fissure",
+    "mineable_properties" : {
+      "minable" : true,
+      "mining_time" : 2.5,
+      "products" : [
+        {
+          "type" : "fluid",
+          "name" : "thermal-water",
+          "probability" : 1,
+          "amount" : 20
+        }
+      ]
+    },
+    "pollution" : 0
+  },
+  "angels-natural-gas" : {
+    "name" : "angels-natural-gas",
+    "localised_name" : [
+      "entity-name.angels-natural-gas"
+    ],
+    "resource_category" : "basic-fluid",
+    "mineable_properties" : {
+      "minable" : true,
+      "mining_time" : 1,
+      "products" : [
+        {
+          "type" : "fluid",
+          "name" : "gas-natural-1",
+          "probability" : 1,
+          "amount" : 20
+        }
+      ]
+    },
+    "pollution" : 0
+  }
+}

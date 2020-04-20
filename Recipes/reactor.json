@@ -1,0 +1,221 @@
+{
+  "burner-reactor" : {
+    "name" : "burner-reactor",
+    "localised_name" : [
+      "entity-name.burner-reactor"
+    ],
+    "max_energy_usage" : 5400000,
+    "neighbour_bonus" : 0.125,
+    "friendly_map_color" : {
+      "r" : 0,
+      "g" : 96,
+      "b" : 145,
+      "a" : 255
+    },
+    "enemy_map_color" : {
+      "r" : 255,
+      "g" : 25,
+      "b" : 25,
+      "a" : 255
+    },
+    "burner_effectivity" : 1,
+    "fuel_categories" : {
+      "chemical" : true
+    },
+    "emissions" : 4.6296296296296e-08,
+    "pollution" : 15
+  },
+  "burner-reactor-2" : {
+    "name" : "burner-reactor-2",
+    "localised_name" : [
+      "entity-name.burner-reactor-2"
+    ],
+    "max_energy_usage" : 7200000,
+    "neighbour_bonus" : 0.125,
+    "friendly_map_color" : {
+      "r" : 0,
+      "g" : 96,
+      "b" : 145,
+      "a" : 255
+    },
+    "enemy_map_color" : {
+      "r" : 255,
+      "g" : 25,
+      "b" : 25,
+      "a" : 255
+    },
+    "burner_effectivity" : 1,
+    "fuel_categories" : {
+      "chemical" : true
+    },
+    "emissions" : 3.4722222222222e-08,
+    "pollution" : 15
+  },
+  "burner-reactor-3" : {
+    "name" : "burner-reactor-3",
+    "localised_name" : [
+      "entity-name.burner-reactor-3"
+    ],
+    "max_energy_usage" : 9000000,
+    "neighbour_bonus" : 0.125,
+    "friendly_map_color" : {
+      "r" : 0,
+      "g" : 96,
+      "b" : 145,
+      "a" : 255
+    },
+    "enemy_map_color" : {
+      "r" : 255,
+      "g" : 25,
+      "b" : 25,
+      "a" : 255
+    },
+    "burner_effectivity" : 1,
+    "fuel_categories" : {
+      "chemical" : true
+    },
+    "emissions" : 2.7777777777778e-08,
+    "pollution" : 15
+  },
+  "fluid-reactor" : {
+    "name" : "fluid-reactor",
+    "localised_name" : [
+      "entity-name.fluid-reactor"
+    ],
+    "max_energy_usage" : 5400000,
+    "neighbour_bonus" : 0.125,
+    "friendly_map_color" : {
+      "r" : 0,
+      "g" : 96,
+      "b" : 145,
+      "a" : 255
+    },
+    "enemy_map_color" : {
+      "r" : 255,
+      "g" : 25,
+      "b" : 25,
+      "a" : 255
+    },
+    "pollution" : 0
+  },
+  "fluid-reactor-2" : {
+    "name" : "fluid-reactor-2",
+    "localised_name" : [
+      "entity-name.fluid-reactor-2"
+    ],
+    "max_energy_usage" : 7200000,
+    "neighbour_bonus" : 0.125,
+    "friendly_map_color" : {
+      "r" : 0,
+      "g" : 96,
+      "b" : 145,
+      "a" : 255
+    },
+    "enemy_map_color" : {
+      "r" : 255,
+      "g" : 25,
+      "b" : 25,
+      "a" : 255
+    },
+    "pollution" : 0
+  },
+  "fluid-reactor-3" : {
+    "name" : "fluid-reactor-3",
+    "localised_name" : [
+      "entity-name.fluid-reactor-3"
+    ],
+    "max_energy_usage" : 9000000,
+    "neighbour_bonus" : 0.125,
+    "friendly_map_color" : {
+      "r" : 0,
+      "g" : 96,
+      "b" : 145,
+      "a" : 255
+    },
+    "enemy_map_color" : {
+      "r" : 255,
+      "g" : 25,
+      "b" : 25,
+      "a" : 255
+    },
+    "pollution" : 0
+  },
+  "nuclear-reactor" : {
+    "name" : "nuclear-reactor",
+    "localised_name" : [
+      "entity-name.uranium-reactor"
+    ],
+    "max_energy_usage" : 54000000,
+    "neighbour_bonus" : 1,
+    "friendly_map_color" : {
+      "r" : 0,
+      "g" : 96,
+      "b" : 145,
+      "a" : 255
+    },
+    "enemy_map_color" : {
+      "r" : 255,
+      "g" : 25,
+      "b" : 25,
+      "a" : 255
+    },
+    "burner_effectivity" : 1,
+    "fuel_categories" : {
+      "nuclear" : true
+    },
+    "emissions" : 0,
+    "pollution" : 0
+  },
+  "nuclear-reactor-2" : {
+    "name" : "nuclear-reactor-2",
+    "localised_name" : [
+      "entity-name.thorium-reactor"
+    ],
+    "max_energy_usage" : 72000000,
+    "neighbour_bonus" : 1,
+    "friendly_map_color" : {
+      "r" : 0,
+      "g" : 96,
+      "b" : 145,
+      "a" : 255
+    },
+    "enemy_map_color" : {
+      "r" : 255,
+      "g" : 25,
+      "b" : 25,
+      "a" : 255
+    },
+    "burner_effectivity" : 1,
+    "fuel_categories" : {
+      "thorium" : true
+    },
+    "emissions" : 0,
+    "pollution" : 0
+  },
+  "nuclear-reactor-3" : {
+    "name" : "nuclear-reactor-3",
+    "localised_name" : [
+      "entity-name.deuterium-reactor"
+    ],
+    "max_energy_usage" : 90000000,
+    "neighbour_bonus" : 1,
+    "friendly_map_color" : {
+      "r" : 0,
+      "g" : 96,
+      "b" : 145,
+      "a" : 255
+    },
+    "enemy_map_color" : {
+      "r" : 255,
+      "g" : 25,
+      "b" : 25,
+      "a" : 255
+    },
+    "burner_effectivity" : 1,
+    "fuel_categories" : {
+      "deuterium" : true
+    },
+    "emissions" : 0,
+    "pollution" : 0
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "flying-fortress-equipment-grid" : {
+    "name" : "flying-fortress-equipment-grid",
+    "localised_name" : [
+      "equipment-grid-name.flying-fortress-equipment-grid"
+    ],
+    "equipment_categories" : [
+      "armor",
+      "aircraft"
+    ],
+    "width" : 13,
+    "height" : 12
+  },
+  "gunship-equipment-grid" : {
+    "name" : "gunship-equipment-grid",
+    "localised_name" : [
+      "equipment-grid-name.gunship-equipment-grid"
+    ],
+    "equipment_categories" : [
+      "armor",
+      "aircraft"
+    ],
+    "width" : 8,
+    "height" : 4
+  },
+  "jet-equipment-grid" : {
+    "name" : "jet-equipment-grid",
+    "localised_name" : [
+      "equipment-grid-name.jet-equipment-grid"
+    ],
+    "equipment_categories" : [
+      "armor",
+      "aircraft"
+    ],
+    "width" : 8,
+    "height" : 4
+  },
+  "large-equipment-grid" : {
+    "name" : "large-equipment-grid",
+    "localised_name" : [
+      "equipment-grid-name.large-equipment-grid"
+    ],
+    "equipment_categories" : [
+      "armor"
+    ],
+    "width" : 10,
+    "height" : 10
+  },
+  "medium-equipment-grid" : {
+    "name" : "medium-equipment-grid",
+    "localised_name" : [
+      "equipment-grid-name.medium-equipment-grid"
+    ],
+    "equipment_categories" : [
+      "armor"
+    ],
+    "width" : 7,
+    "height" : 7
+  },
+  "power-armor-equipment-grid-mk3" : {
+    "name" : "power-armor-equipment-grid-mk3",
+    "localised_name" : [
+      "equipment-grid-name.power-armor-equipment-grid-mk3"
+    ],
+    "equipment_categories" : [
+      "armor"
+    ],
+    "width" : 12,
+    "height" : 12
+  },
+  "power-armor-equipment-grid-mk4" : {
+    "name" : "power-armor-equipment-grid-mk4",
+    "localised_name" : [
+      "equipment-grid-name.power-armor-equipment-grid-mk4"
+    ],
+    "equipment_categories" : [
+      "armor"
+    ],
+    "width" : 14,
+    "height" : 14
+  },
+  "power-armor-equipment-grid-mk5" : {
+    "name" : "power-armor-equipment-grid-mk5",
+    "localised_name" : [
+      "equipment-grid-name.power-armor-equipment-grid-mk5"
+    ],
+    "equipment_categories" : [
+      "armor"
+    ],
+    "width" : 16,
+    "height" : 16
+  },
+  "small-equipment-grid" : {
+    "name" : "small-equipment-grid",
+    "localised_name" : [
+      "equipment-grid-name.small-equipment-grid"
+    ],
+    "equipment_categories" : [
+      "armor"
+    ],
+    "width" : 5,
+    "height" : 5
+  }
+}
