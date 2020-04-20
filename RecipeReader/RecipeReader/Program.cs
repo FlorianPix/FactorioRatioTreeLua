@@ -1,6 +1,9 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace RecipeReader
 {
@@ -8,16 +11,15 @@ namespace RecipeReader
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
 
-            using (StreamReader r = new StreamReader("file.json"))
+            string content = File.ReadAllText(@"D:\Dateien\Spiele\Factorio\FactorioRatioTreeLua\Recipes\boiler.json");
+            JObject recipes = JObject.Parse(content);
+
+            IList<string> keys = recipes.Properties().Select(p => p.Name).ToList();
+
+            foreach (string item in keys)
             {
-                string json = r.ReadToEnd();
-                dynamic array = JsonConvert.DeserializeObject(json);
-                foreach (var item in array)
-                {
-                    Console.WriteLine("{0} {1}", item.temp, item.vcc);
-                }
+                Console.WriteLine(item.ToString());
             }
         }
     }
