@@ -1,6 +1,6 @@
-import os
-import json
 from Recipe import Recipe
+from Ingredient import Ingredient
+from Product import Product
 
 """
 Keys:
@@ -64,26 +64,60 @@ catalyst_amount :: uint or double (optional): How much of this product is a cata
 """
 
 
-def main():
-    os.chdir("..\\Recipes")
-    recipe_file_names = os.listdir()
-    # open recipes (json files)
-    recipe_dict = {}
-    keys = []
-    with open("recipe.json") as json_file:
-        data = json.load(json_file)
-        for key in data.keys():
-            keys.append(key)
-        recipe_dict.update(data)
-    recipes = []
-    for key in keys:
-        recipe = recipe_dict[key]
-        r_o = Recipe(recipe['name'], recipe['ingredients'], recipe['products'], recipe['energy'])
-        recipes.append(r_o)
+class PythonRecipeReader:
+    def __init__(self):
+        self.recipes = {}
+        self.ingredients = {}
+        self.products = {}
 
-    for recipe in recipes:
-        print(recipe)
+    def add_recipe(self, recipe):
+        ingredients = {}
+        for ingredient in recipe['ingredients']:
+            potential_new_ingredient = self.ingredient_exists(ingredient)
+            if potential_new_ingredient is None:
+                ing = Ingredient(ingredient['type'], ingredient['name'], ingredient['amount'])
+                self.ingredients[ingredient['name']] = ing
+                ingredients[ingredient['name']] = ing
+            else:
+                ingredients[ingredient['name']] = potential_new_ingredient
+        products = {}
+        for product in recipe['ingredients']:
+            potential_new_product = self.product_exists(product)
+            if potential_new_product is None:
+                pro = None
+                if 'amount' in product.keys():
+                    pro = self.products[product['name']] = Product(product['type'], product['name'], amount=product['amount'])
+                else:
+                    pro = self.products[product['name']] = Product(product['type'], product['name'],
+                                                             amount_min=product['amount_min'],
+                                                             amount_max=product['amount_max'])
+                self.products[product['name']] = pro
+                products[product['name']] = pro
+            else:
+                self.products[product['name']] = potential_new_product
+        r_o = Recipe(recipe['name'], ingredients, products, recipe['energy'])
+        self.recipes[recipe['name']] = r_o
 
+    def ingredient_exists(self, ingredient):
+        """
+        Used to prohibit the creation of multiple ingredient objects of the same ingredient.
+        Checks if an ingredient with the same name already exists in der ingredients dict.
+        :param ingredient:
+        :return ingredient or None: existing ingredient or None if the ingredient does not yet exist
+        """
+        for existing_ingredient in self.ingredients:
+            if ingredient['name'] is existing_ingredient:
+                return ingredient
+        return None
 
-if __name__ == "__main__":
-    main()
+    def product_exists(self, product):
+        """
+            Used to prohibit the creation of multiple product objects of the same product.
+            Checks if an ingredient with the same name already exists in der ingredients dict.
+            :param product:
+            :return product or None: existing product or None if the product does not yet exist
+            """
+        for existing_product in self.products:
+            if product['name'] is existing_product:
+                return product
+        return None

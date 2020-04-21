@@ -1,3 +1,7 @@
+from Ingredient import Ingredient
+from Product import Product
+
+
 class Recipe:
     def __init__(self, name, ingredients, products, energy):
         self.name = name
@@ -6,7 +10,17 @@ class Recipe:
         self.energy = energy
 
     def __str__(self):
-        return 'Recipe of ' + self.name \
-               + ':\n' + str(self.ingredients) \
-               + '\n' + str(self.products) \
-               + '\n' + str(self.energy)
+        ingredients = ''
+        for ingredient_name in self.ingredients:
+            ingredients = ingredients + str(self.ingredients[ingredient_name]) + '\n\n\t'
+        products = ''
+        for product_name in self.products:
+            products = products + str(self.products[product_name]) + '\n\n\t\t'
+        return '{ \n\tRecipe:' \
+               + '\n\t\t' + self.name \
+               + '\n\n\t' + 'Ingredients:\n\t'\
+               + ingredients \
+               + '\n\t' + 'Products:\n\t\t'\
+               + products \
+               + '\n\t' + 'Time:\n\t\t' \
+               + str(self.energy) + 's\n}\n'
