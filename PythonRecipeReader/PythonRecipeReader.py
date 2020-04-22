@@ -76,7 +76,6 @@ class PythonRecipeReader:
         also adds all ingredients that aren't yet in self.ingredients to that.
         The same applies to products.
         :param recipe: A dictionary for a single recipe
-        :return:
         """
 
         ingredients = {}
@@ -95,7 +94,7 @@ class PythonRecipeReader:
                 # if ingredient does already exist take that ingredient object and add it to ingredients
                 ingredients[ingredient['name']] = potential_new_ingredient
         products = {}
-        for product in recipe['ingredients']:
+        for product in recipe['products']:
             # check if product already exist
             potential_new_product = self.product_exists(product)
             if potential_new_product is None:
@@ -131,7 +130,8 @@ class PythonRecipeReader:
         :return ingredient or None: existing ingredient or None if the ingredient does not yet exist
         """
         for existing_ingredient in self.ingredients:
-            if ingredient['name'] is existing_ingredient:
+            if ingredient['name'] is existing_ingredient \
+                    and ingredient['amount'] is self.ingredients[existing_ingredient]['amount']:
                 return ingredient
         return None
 
@@ -143,6 +143,26 @@ class PythonRecipeReader:
             :return product or None: existing product or None if the product does not yet exist
             """
         for existing_product in self.products:
-            if product['name'] is existing_product:
-                return product
+            if 'amount' in product:
+                if product['name'] is existing_product \
+                        and product['amount'] is self.products[existing_product]['amount']:
+                    return product
+            else:
+                if product['name'] is existing_product \
+                        and product['amount_minimum'] is self.products[existing_product]['amount_minimum']\
+                        and product['amount_maximum'] is self.products[existing_product]['amount_maximum']:
+                    return product
         return None
+
+    def search_recipes_by_name(self, name):
+        """
+        Search for recipes that have an ingredient name as a product name.
+        :param name:
+        :return dict of matched recipes:
+        """
+        recipes = {}
+        for recipe_name in self.recipes:
+            for product in self.recipes[recipe_name].products:
+                if self.recipes[recipe_name].products[product].name is name:
+                    recipes['name'] = self.recipes[recipe_name]
+        return recipes

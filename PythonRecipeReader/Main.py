@@ -19,8 +19,22 @@ def main():
         recipe = recipe_dict[key]
         prr.add_recipe(recipe)
 
-    for recipename in prr.recipes:
-        print(prr.recipes[recipename])
+    add_recipes_for_ingredients(prr)
+
+    for recipe_name in prr.recipes:
+        print(prr.recipes[recipe_name])
+
+
+def add_recipes_for_ingredients(prr):
+    """
+    For every recipe look at the ingredients.
+    For every ingredient search what recipes exist that have this ingredient as a product.
+    Add these recipes to the ingredients dict of recipes.
+    :param prr:
+    """
+    for recipe_name in prr.recipes:
+        for ingredient in prr.recipes[recipe_name].ingredients:
+            prr.recipes[recipe_name].ingredients[ingredient].add_recipes(prr.search_recipes_by_name(ingredient))
 
 
 if __name__ == "__main__":

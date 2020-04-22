@@ -1,0 +1,97 @@
+{
+  "basic-electronic-components" : {
+    "name" : "basic-electronic-components",
+    "localised_name" : [
+      "item-name.basic-electronic-components"
+    ],
+    "category" : "electronics-machine",
+    "order" : "0-b1[basic-electronic-components]",
+    "group" : {
+      "name" : "bob-intermediate-products",
+      "type" : "item-group"
+    },
+    "subgroup" : {
+      "name" : "bob-electronic-components",
+      "type" : "item-subgroup"
+    },
+    "enabled" : false,
+    "emissions_multiplier" : 1,
+    "energy" : 4,
+    "ingredients" : [
+      {
+        "type" : "item",
+        "name" : "tinned-copper-cable",
+        "amount" : 2
+      },
+      {
+        "type" : "item",
+        "name" : "solid-carbon",
+        "amount" : 1
+      }
+    ],
+    "products" : [
+      {
+        "type" : "item",
+        "name" : "basic-electronic-components",
+        "probability" : 1,
+        "amount" : 10
+      }
+    ],
+    "main_product" : {
+      "type" : "item",
+      "name" : "basic-electronic-components",
+      "probability" : 1,
+      "amount" : 10
+    }
+  },
+  "electronic-components" : {
+    "name" : "electronic-components",
+    "localised_name" : [
+      "item-name.electronic-components"
+    ],
+    "category" : "electronics-machine",
+    "order" : "0-b2[electronic-components]",
+    "group" : {
+      "name" : "bob-intermediate-products",
+      "type" : "item-group"
+    },
+    "subgroup" : {
+      "name" : "bob-electronic-components",
+      "type" : "item-subgroup"
+    },
+    "enabled" : false,
+    "emissions_multiplier" : 1,
+    "energy" : 3.5,
+    "ingredients" : [
+      {
+        "type" : "item",
+        "name" : "silicon-wafer",
+        "amount" : 2
+      },
+      {
+        "type" : "item",
+        "name" : "tinned-copper-cable",
+        "amount" : 1
+      },
+      {
+        "type" : "item",
+        "name" : "plastic-bar",
+        "amount" : 1
+      }
+    ],
+    "products" : [
+      {
+        "type" : "item",
+        "name" : "electronic-components",
+        "probability" : 1,
+        "amount" : 5
+      }
+    ],
+    "main_product" : {
+      "type" : "item",
+      "name" : "electronic-components",
+      "probability" : 1,
+      "amount" : 5
+    }
+  }
+}

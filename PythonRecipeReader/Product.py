@@ -1,7 +1,8 @@
 class Product:
-    def __init__(self, type, name, amount=None, amount_min=None, amount_max=None, probability=None):
+    def __init__(self, type, name, temperature=None, amount=None, amount_min=None, amount_max=None, probability=None):
         self.type = type
         self.name = name
+        self.temperature = temperature
         self.amount = amount
         self.amount_min = amount_min
         self.amount_max = amount_max
