@@ -71,31 +71,56 @@ class PythonRecipeReader:
         self.products = {}
 
     def add_recipe(self, recipe):
+        """
+        Takes the given dict recipe, creates a Recipe() from it and adds it to self.recipes
+        also adds all ingredients that aren't yet in self.ingredients to that.
+        The same applies to products.
+        :param recipe: A dictionary for a single recipe
+        :return:
+        """
+
         ingredients = {}
         for ingredient in recipe['ingredients']:
+            # check if ingredient already exist
             potential_new_ingredient = self.ingredient_exists(ingredient)
             if potential_new_ingredient is None:
-                ing = Ingredient(ingredient['type'], ingredient['name'], ingredient['amount'])
+                # if ingredient does not already exist create a new Ingredient() from ingredient dictionary
+                # and add it to ingredients
+                ing = Ingredient(ingredient['type'],
+                                 ingredient['name'],
+                                 ingredient['amount'])
                 self.ingredients[ingredient['name']] = ing
                 ingredients[ingredient['name']] = ing
             else:
+                # if ingredient does already exist take that ingredient object and add it to ingredients
                 ingredients[ingredient['name']] = potential_new_ingredient
         products = {}
         for product in recipe['ingredients']:
+            # check if product already exist
             potential_new_product = self.product_exists(product)
             if potential_new_product is None:
+                # if product does not already exist create a new Product() from product dictionary
+                # and add it to products
                 pro = None
                 if 'amount' in product.keys():
-                    pro = self.products[product['name']] = Product(product['type'], product['name'], amount=product['amount'])
+                    pro = self.products[product['name']] = Product(product['type'],
+                                                                   product['name'],
+                                                                   amount=product['amount'])
                 else:
-                    pro = self.products[product['name']] = Product(product['type'], product['name'],
-                                                             amount_min=product['amount_min'],
-                                                             amount_max=product['amount_max'])
+                    pro = self.products[product['name']] = Product(product['type'],
+                                                                   product['name'],
+                                                                   amount_min=product['amount_min'],
+                                                                   amount_max=product['amount_max'])
                 self.products[product['name']] = pro
                 products[product['name']] = pro
             else:
-                self.products[product['name']] = potential_new_product
-        r_o = Recipe(recipe['name'], ingredients, products, recipe['energy'])
+                # if product does already exist take that product object and add it to products
+                products[product['name']] = potential_new_product
+        # create new Recipe() and add it to self.recipes
+        r_o = Recipe(recipe['name'],
+                     ingredients,
+                     products,
+                     recipe['energy'])
         self.recipes[recipe['name']] = r_o
 
     def ingredient_exists(self, ingredient):
