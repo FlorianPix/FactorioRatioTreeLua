@@ -1,0 +1,17 @@
+// angels-plate-copper
+digraph {
+	"angels-plate-copper" [label="angels-plate-copper
+4s" shape=hexagon]
+	// liquid-molten-copper
+	{
+		"liquid-molten-copper" [label="liquid-molten-copper
+40x" shape=box]
+	}
+	"liquid-molten-copper" -> "angels-plate-copper" [label="10.0/s"]
+	// copper-plate
+	{
+		"copper-plate" [label="copper-plate
+4x" shape=box]
+	}
+	"angels-plate-copper" -> "copper-plate" [label="1.0/s"]
+}

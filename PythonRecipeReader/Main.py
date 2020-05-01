@@ -3,20 +3,34 @@ import sys
 import json
 import pickle
 from PythonRecipeReader import PythonRecipeReader
+import Graph
 
 
 def main():
+    os.environ["PATH"] += os.pathsep + 'C:/Program Files (x86)/Graphviz2.38/bin'
     prr = None
     if os.path.exists('prr.pkl'):
-        with open('prr.pkl', 'rb') as input:
-            prr = pickle.load(input)
+        with open('prr.pkl', 'rb') as load_this:
+            prr = pickle.load(load_this)
     else:
         print('No PRR Object available, importing recipes from json.')
         prr = create_fill_and_save_prr()
         print('Building Database: Done')
 
-    for recipe_name in prr.recipes:
-        print(prr.recipes[recipe_name])
+    # Example of searching a recipe
+    while(True):
+        searched_name = input()
+        if searched_name == '':
+            break
+        search_result = prr.search_recipes_by_name(searched_name)[searched_name]
+        if search_result:
+            i = 0
+            for recipe in search_result:
+                Graph.draw_recipe(recipe, i)
+                i += 1
+            print('Rendered ' + str(i) + ' graphs.')
+        else:
+            print('Couldn\'t find this recipe.')
 
 
 def create_fill_and_save_prr():

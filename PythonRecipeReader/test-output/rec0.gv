@@ -1,0 +1,17 @@
+// angels-copper-pebbles-smelting
+digraph {
+	"angels-copper-pebbles-smelting" [label="angels-copper-pebbles-smelting
+7s" shape=hexagon]
+	// angels-copper-pebbles
+	{
+		"angels-copper-pebbles" [label="angels-copper-pebbles
+4x" shape=box]
+	}
+	"angels-copper-pebbles" -> "angels-copper-pebbles-smelting" [label="0.57/s"]
+	// copper-plate
+	{
+		"copper-plate" [label="copper-plate
+2x" shape=box]
+	}
+	"angels-copper-pebbles-smelting" -> "copper-plate" [label="0.29/s"]
+}

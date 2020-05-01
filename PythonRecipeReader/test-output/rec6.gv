@@ -1,0 +1,17 @@
+// angels-roll-copper-converting
+digraph {
+	"angels-roll-copper-converting" [label="angels-roll-copper-converting
+0.5s" shape=hexagon]
+	// angels-roll-copper
+	{
+		"angels-roll-copper" [label="angels-roll-copper
+1x" shape=box]
+	}
+	"angels-roll-copper" -> "angels-roll-copper-converting" [label="2.0/s"]
+	// copper-plate
+	{
+		"copper-plate" [label="copper-plate
+4x" shape=box]
+	}
+	"angels-roll-copper-converting" -> "copper-plate" [label="8.0/s"]
+}

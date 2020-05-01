@@ -1,0 +1,17 @@
+// copper-plate
+digraph {
+	"copper-plate" [label="copper-plate
+10.5s" shape=hexagon]
+	// copper-ore
+	{
+		"copper-ore" [label="copper-ore
+4x" shape=box]
+	}
+	"copper-ore" -> "copper-plate" [label="0.38/s"]
+	// copper-plate
+	{
+		"copper-plate" [label="copper-plate
+3x" shape=box]
+	}
+	"copper-plate" -> "copper-plate" [label="0.29/s"]
+}

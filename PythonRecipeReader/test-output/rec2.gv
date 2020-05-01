@@ -1,0 +1,41 @@
+// cobalt-oxide-from-copper
+digraph {
+	"cobalt-oxide-from-copper" [label="cobalt-oxide-from-copper
+25s" shape=hexagon]
+	// stone
+	{
+		stone [label="stone
+1x" shape=box]
+	}
+	stone -> "cobalt-oxide-from-copper" [label="0.04/s"]
+	// copper-ore
+	{
+		"copper-ore" [label="copper-ore
+7x" shape=box]
+	}
+	"copper-ore" -> "cobalt-oxide-from-copper" [label="0.28/s"]
+	// solid-carbon
+	{
+		"solid-carbon" [label="solid-carbon
+1x" shape=box]
+	}
+	"solid-carbon" -> "cobalt-oxide-from-copper" [label="0.04/s"]
+	// gas-hydrogen
+	{
+		"gas-hydrogen" [label="gas-hydrogen
+5x" shape=box]
+	}
+	"gas-hydrogen" -> "cobalt-oxide-from-copper" [label="0.2/s"]
+	// copper-plate
+	{
+		"copper-plate" [label="copper-plate
+Nonex" shape=box]
+	}
+	"cobalt-oxide-from-copper" -> "copper-plate" [label="0.36/s"]
+	// cobalt-oxide
+	{
+		"cobalt-oxide" [label="cobalt-oxide
+Nonex" shape=box]
+	}
+	"cobalt-oxide-from-copper" -> "cobalt-oxide" [label="0.08/s"]
+}

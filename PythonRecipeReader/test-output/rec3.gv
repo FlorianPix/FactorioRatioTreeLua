@@ -1,0 +1,17 @@
+// angelsore3-crushed-smelting
+digraph {
+	"angelsore3-crushed-smelting" [label="angelsore3-crushed-smelting
+7s" shape=hexagon]
+	// angels-ore3-crushed
+	{
+		"angels-ore3-crushed" [label="angels-ore3-crushed
+3x" shape=box]
+	}
+	"angels-ore3-crushed" -> "angelsore3-crushed-smelting" [label="0.43/s"]
+	// copper-plate
+	{
+		"copper-plate" [label="copper-plate
+2x" shape=box]
+	}
+	"angelsore3-crushed-smelting" -> "copper-plate" [label="0.29/s"]
+}
