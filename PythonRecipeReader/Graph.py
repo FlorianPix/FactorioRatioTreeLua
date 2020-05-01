@@ -27,5 +27,9 @@ def draw_ingredient(ingredient):
 
 def draw_product(product):
     dot = Digraph(comment=product.name)
-    dot.node(product.name, label=product.name + '\n' + str(product.amount) + 'x', shape='box')
+    if product.amount is not None:
+        dot.node(product.name, label=product.name + '\n' + str(product.amount) + 'x', shape='box')
+    else:
+        average_amount = str((product.amount_min + product.amount_max) / 2)
+        dot.node(product.name, label=product.name + '\n' + average_amount + 'x', shape='box')
     return dot

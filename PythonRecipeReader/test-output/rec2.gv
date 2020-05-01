@@ -29,13 +29,13 @@ digraph {
 	// copper-plate
 	{
 		"copper-plate" [label="copper-plate
-Nonex" shape=box]
+9.0x" shape=box]
 	}
 	"cobalt-oxide-from-copper" -> "copper-plate" [label="0.36/s"]
 	// cobalt-oxide
 	{
 		"cobalt-oxide" [label="cobalt-oxide
-Nonex" shape=box]
+2.0x" shape=box]
 	}
 	"cobalt-oxide-from-copper" -> "cobalt-oxide" [label="0.08/s"]
 }
