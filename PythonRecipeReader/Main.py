@@ -1,10 +1,27 @@
 import os
+import sys
 import json
+import pickle
 from PythonRecipeReader import PythonRecipeReader
 
 
 def main():
+    prr = None
+    if os.path.exists('prr.pkl'):
+        with open('prr.pkl', 'rb') as input:
+            prr = pickle.load(input)
+    else:
+        print('No PRR Object available, importing recipes from json.')
+        prr = create_fill_and_save_prr()
+        print('Building Database: Done')
+
+    for recipe_name in prr.recipes:
+        print(prr.recipes[recipe_name])
+
+
+def create_fill_and_save_prr():
     os.chdir("..\\Recipes")
+
     recipe_file_names = os.listdir()
     # open recipes (json files)
     recipe_dict = {}
@@ -20,9 +37,12 @@ def main():
         prr.add_recipe(recipe)
 
     add_recipes_for_ingredients(prr)
-
-    for recipe_name in prr.recipes:
-        print(prr.recipes[recipe_name])
+    os.chdir("..\\PythonRecipeReader")
+    sys.setrecursionlimit(10000)
+    with open('prr.pkl', 'wb') as output:
+        pickle.dump(prr, output, -1)
+    sys.setrecursionlimit(1000)
+    return prr
 
 
 def add_recipes_for_ingredients(prr):
