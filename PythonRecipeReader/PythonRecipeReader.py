@@ -160,9 +160,15 @@ class PythonRecipeReader:
         :param name:
         :return dict of matched recipes:
         """
-        recipes = {}
+        recipes = {name: []}
         for recipe_name in self.recipes:
             for product in self.recipes[recipe_name].products:
-                if self.recipes[recipe_name].products[product].name is name:
-                    recipes['name'] = self.recipes[recipe_name]
+                if self.recipes[recipe_name].products[product].name == name:
+                    recipe = self.recipes[recipe_name]
+                    if recipes[name] is None:
+                        recipes[name] = [recipe]
+                    else:
+                        r = recipes[name]
+                        r.append(recipe)
+                        recipes[name] = r
         return recipes

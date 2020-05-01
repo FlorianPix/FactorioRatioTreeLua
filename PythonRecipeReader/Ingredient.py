@@ -17,7 +17,14 @@ class Ingredient:
     def print_recipes(self):
         ret = ''
         for recipe in self.recipes:
-            ret = ret + str(self.recipes[recipe])
+            if isinstance(self.recipes[recipe], list):
+                for r in self.recipes[recipe]:
+                    if ret is '':
+                        ret = str(r.name)
+                    else:
+                        ret = ret + ', ' + str(r.name)
+            else:
+                ret = ret + self.recipes[recipe].name
         return ret
 
     def __str__(self):
